@@ -26,7 +26,7 @@ function sendRequestForLoading(body) {
 
     xhr.addEventListener('load', () => {
         if (xhr.status === 200) {
-            alert('Изображение загружено успешно');
+            alert('Файл загружен успешно');
             sendRequestForOutput();
         }
     });
