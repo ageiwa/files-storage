@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./main.css">
+    <title>Document</title>
+</head>
+<body>
+
+    <div class="input-wrapper">
+        <div class="container">
+            <p class="file-name">Выберите изображение</p>
+            <form id="form" enctype="multipart/form-data">
+                <input class="input-file" id="input-file" type="file" name="img">
+                <label class="selecting-img" for="input-file">Выбрать изображение</label>
+                <button class="btn-load-img" id="btn-load-img" type="submit">Загрузить</button>
+            </form>
+        </div>
+    </div>
+    
+    <div class="list-img"></div>
+
+    <script src="./script.js"></script>
+</body>
+</html>
