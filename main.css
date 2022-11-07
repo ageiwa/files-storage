@@ -55,9 +55,22 @@
 }
 
 .file-list__item {
+    border: 1px solid #000;
     width: 100%;
+    display: flex;
 }
 
-.item__img {
-    width: 100%;
+.item__icon {
+    width: 50px;
+    background-size: auto 80%;
+    background-position: center center;
+    background-repeat: no-repeat; 
+}
+
+.docx {
+    background-image: url(./src/icons/docx-icon.png);
+}
+
+.item__desc {
+    padding: 10px;
 }
