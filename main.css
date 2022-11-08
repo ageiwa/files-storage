@@ -78,8 +78,20 @@
     background-repeat: no-repeat; 
 }
 
-.doc {
+.docs {
     background-image: url(./src/icons/docs.png);
+}
+
+.sheets {
+    background-image: url(./src/icons/sheets.png);
+}
+
+.unk-file {
+    background-image: url(./src/icons/unk-file.png);
+}
+
+.img {
+    background-image: url(./src/icons/img.png);
 }
 
 .item__desc {

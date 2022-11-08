@@ -4,23 +4,32 @@ if (isset($_FILES['img'])) loadingFile();
 else if (isset($_GET['get'])) getFiles();
 
 function loadingFile() {
-    $uploadDir = './imgs/';
+    $uploadDir = './files/';
     $uploadFile = $_FILES['img'];
 
     copy($uploadFile['tmp_name'], $uploadDir . $uploadFile['name']);
 }
 
 function getFiles() {
-    $filesInFolder = scandir('./imgs/');
+    $filesInFolder = scandir('./files/');
 
     for ($i = 2; $i < count($filesInFolder); $i++) {
         $fileName = $filesInFolder[$i];
-        $size = filesize('./imgs/' . $filesInFolder[$i]) / 1024 . ' КБайт';
-        $extension = new SplFileInfo('./imgs/' . $filesInFolder[$i]);
+        $size = filesize('./files/' . $filesInFolder[$i]) / 1024 . ' КБайт';
+        $extension = new SplFileInfo('./files/' . $filesInFolder[$i]);
         $iconClass = '';
 
-        if ($extension->getExtension() === 'docx' || $extension->getExtension() === 'txt' || $extension->getExtension() === 'xlsx') {
-            $iconClass = 'doc';
+        if ($extension->getExtension() === 'docx' || $extension->getExtension() === 'txt') {
+            $iconClass = 'docs';
+        }
+        else if ($extension->getExtension() === 'xlsx') {
+            $iconClass = 'sheets';
+        }
+        else if ($extension->getExtension() === 'png') {
+            $iconClass = 'img';
+        }
+        else {
+            $iconClass = 'unk-file';
         }
 
         echo 
