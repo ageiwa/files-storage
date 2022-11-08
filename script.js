@@ -18,6 +18,15 @@ form.addEventListener('submit', (e) => {
     sendRequestForLoading(formData);
 });
 
+document.addEventListener('click', (e) => {
+    if (e.target.classList.contains('item__btn-delete')) {
+        const file = e.target.parentElement;
+        const fileId = file.getAttribute('idAttr');
+
+        sendRequestForDelete(fileId);
+    }
+});
+
 function sendRequestForLoading(body) {
     const xhr = new XMLHttpRequest();
 
@@ -46,5 +55,17 @@ function sendRequestForOutput() {
         if (xhr.status === 200) {
             fileList.innerHTML = xhr.response;
         }
+    });
+}
+
+function sendRequestForDelete(body) {
+    const xhr = new XMLHttpRequest();
+
+    xhr.open('POST', './server/files.php');
+    xhr.setRequestHeader('Content-type', 'application/x-www-form-urlencoded');
+    xhr.send('id=' + body);
+
+    xhr.addEventListener('load', () => {
+        if (xhr.status === 200) sendRequestForOutput();
     });
 }
