@@ -1,12 +1,10 @@
 <?php
 
-if (isset($_FILES['img'])) loadingFile();
+if (isset($_FILES['img'])) loadingFile($_FILES['img']);
 else if (isset($_GET['get'])) getFiles();
 
-function loadingFile() {
+function loadingFile($uploadFile) {
     $uploadDir = './files/';
-    $uploadFile = $_FILES['img'];
-
     copy($uploadFile['tmp_name'], $uploadDir . $uploadFile['name']);
 }
 
