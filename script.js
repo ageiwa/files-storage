@@ -21,7 +21,7 @@ form.addEventListener('submit', (e) => {
 function sendRequestForLoading(body) {
     const xhr = new XMLHttpRequest();
 
-    xhr.open('POST', './server/loading-img.php');
+    xhr.open('POST', './server/files.php');
     xhr.send(body);
 
     xhr.addEventListener('load', () => {
@@ -39,7 +39,7 @@ function sendRequestForLoading(body) {
 function sendRequestForOutput() {
     const xhr = new XMLHttpRequest();
 
-    xhr.open('GET', './server/output.php');
+    xhr.open('GET', './server/files.php?get=1');
     xhr.send();
 
     xhr.addEventListener('load', () => {

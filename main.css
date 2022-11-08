@@ -78,12 +78,8 @@
     background-repeat: no-repeat; 
 }
 
-.docx {
-    background-image: url(./src/icons/docx.png);
-}
-
-.txt {
-    background-image: url(./src/icons/txt.png);
+.doc {
+    background-image: url(./src/icons/docs.png);
 }
 
 .item__desc {
